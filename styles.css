@@ -1,7 +1,256 @@
+/*---------------------CSS by Julia-----------------------------*/
 /* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
 /*-------------------- CSS REST ---------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+}
+
 /* -------------------- ROOT VARIABLES --------------------------------------- */
+:root {
+    --green: #06A816;
+    --orange: #E75D02;
+    --black: #000000;
+    --white: #ffffff;
+}
+
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Habibi';
+}
+
+header {
+    background-color: var(--green);
+}
+
+nav {
+    grid-area: nav;
+
+}
+
+main {
+    background-color: var(--white);
+}
+
+section {
+    text-align: center;
+}
+
+footer{
+    grid-area: footer;
+    color: var(--green);
+}
+
+h1 {
+    text-shadow: 2px 2px 2px var(--black);
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.75em;
+    text-align: left;
+    padding: 10px;
+}
+
+h3{
+    padding: 15px;
+}
+
+p {
+    margin: 10px;
+    line-height: 1.2;
+}
+
+h3, p, nav ul {
+    font-size: 1.25em;
+}
+
+h1,h2,h3 {
+    font-family: 'Irish Grover';
+}
+
+h1, h3, header p, footer, #contact {
+    text-align: center;
+}
+
+h1, #contact{
+    color: var(--white);
+} 
+
+nav li{
+    list-style: none;
+}
+
+header p {
+    font-style: italic;
+}
+
+header p, #fruits figcaption, #vegetables figcaption{
+    color: var(--white);
+}
+
+nav a {
+    background-color: var(--orange);
+    text-decoration: none;
+    display: block;
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
+    margin: 15px;
+    padding: 10px;    
+}
+
+#fruits p, #vegetables p {
+    text-align: left;
+}  
+
+#contact h2, #hours h2 {
+    text-align: center;
+}
+
+#contact p, #hours ul{
+    font-size: 1.25em;
+    line-height: 1.2;
+}
+
+#contact {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+
+#hours {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.sales figure {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+figcaption{
+ background-color: var(--black);
+    opacity: .8;
+    width: 150px;
+    height: 20px;
+    position: absolute;
+    border-radius: 2px;
+    bottom: 140px;
+    left: 140px;   
+}
+
+@media screen and (min-width:550px){
+    body{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+    main {
+        grid-area: main;
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media screen and (min-width:834px){
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }    
+    nav ul {
+        grid-template-rows: 1fr
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        }
+
+    .sales {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width:1280px){
+    .sales {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+    
+
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width:1440px){
+    .sales {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+}
